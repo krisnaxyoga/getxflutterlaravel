@@ -15,8 +15,12 @@ class SourceUser {
     if (responseBody == null) return false;
 
     if (responseBody['success']) {
-      var mapUser = responseBody['data'];
-      Session.saveUser(User.fromJson(mapUser));
+      var mapUser = responseBody['user'];
+      if (mapUser != null) {
+        Session.saveUser(User.fromJson(mapUser), token: responseBody['token']);
+      } else {
+        DInfo.toastError('Gagal Login');
+      }
     }
 
     return responseBody['success'];

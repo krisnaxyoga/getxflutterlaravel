@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
       print(success);
       if (success) {
         DInfo.notifSuccess('success', 'success registrasi');
-        Get.off(() => const HomePage());
+        Get.off(() => HomePage());
       } else {
         DInfo.dialogError(context, 'gagal login');
         DInfo.closeDialog(context);

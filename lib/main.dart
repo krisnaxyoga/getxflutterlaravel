@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           future: Session.getUser(),
           builder: (context, AsyncSnapshot<User> snapshot) {
             if (snapshot.data != null && snapshot.data!.idUser != null) {
-              return const HomePage();
+              return HomePage();
             } else {
               return const LoginPage();
             }
